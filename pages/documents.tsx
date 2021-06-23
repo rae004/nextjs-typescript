@@ -1,11 +1,20 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import Layout from "../components/layout";
+import Head from "next/head";
+
+export const pageTitle = 'Next.js Documentation List'
 
 export default function Documents() {
 
     return (
-        <div className={styles.container}>
+        <Layout>
+            <Head>
+                <title>{ pageTitle }</title>
+                <meta name={'og:title'} content={ pageTitle  }/>
+                <meta name="description" content="A place to find Next.Js documentation" />
+            </Head>
             <section>
                 <h1>Documentation Links:</h1>
                 <div className={styles.grid}>
@@ -31,6 +40,6 @@ export default function Documents() {
                     </Link>
                 </div>
             </section>
-        </div>
+        </Layout>
     )
 }
